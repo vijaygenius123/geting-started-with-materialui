@@ -3,9 +3,9 @@ import {Formik, Form} from "formik";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import {INITIAL_FORM_STATE} from "./formConfig";
+import {INITIAL_FORM_STATE, FORM_VALIDATION} from "./formConfig";
+import TextFieldWrapper from "../../components/TextFieldWrapper";
 
 const Create = () => {
 
@@ -18,38 +18,42 @@ const Create = () => {
         >
             Create a Note
         </Typography>
-        <Formik initialValues={INITIAL_FORM_STATE} onSubmit={console.log}>
+        <Formik
+            initialValues={INITIAL_FORM_STATE}
+            validationSchema={FORM_VALIDATION}
+            onSubmit={values => console.log(values)}
+        >
             <Form>
-                <TextField
-                    sx={{
-                        mt: 1,
-                        mb: 2,
-                        display: 'block'
-                    }}
+                <TextFieldWrapper
+                    name="title"
                     label="Note Title"
-                    variant="outlined"
-                    color="secondary"
-                    fullWidth
-                    required
-                />
-                <TextField
                     sx={{
                         mt: 1,
                         mb: 2,
                         display: 'block'
                     }}
-                    label="Details"
-                    variant="outlined"
                     color="secondary"
-                    fullWidth
+                />
+                <TextFieldWrapper
+                    name="details"
+                    label="Details"
+                    sx={{
+                        mt: 1,
+                        mb: 2,
+                        display: 'block'
+                    }}
                     multiline
                     rows={5}
+                    color="secondary"
                 />
                 <Button
+                    type="submit"
                     variant="contained"
                     color="secondary"
                     endIcon={<KeyboardArrowRight/>}
-                >Submit</Button>
+                >
+                    Submit
+                </Button>
             </Form>
         </Formik>
     </Container>
