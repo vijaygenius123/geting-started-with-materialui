@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import {INITIAL_FORM_STATE, FORM_VALIDATION} from "./formConfig";
 import TextFieldWrapper from "../../components/TextFieldWrapper";
+import RadioGroupWrapper from "../../components/RadioGroupWrapper";
 
 const Create = () => {
 
@@ -45,6 +46,16 @@ const Create = () => {
                     multiline
                     rows={5}
                     color="secondary"
+                />
+                <RadioGroupWrapper
+                    name="category"
+                    label="Note Category"
+                    options={[
+                        {label: "Money", value: "money"},
+                        {label: "Todos", value: "todos"},
+                        {label: "Work", value: "work"},
+                        {label: "Reminders", value: "reminders"},
+                    ]}
                 />
                 <Button
                     type="submit"
