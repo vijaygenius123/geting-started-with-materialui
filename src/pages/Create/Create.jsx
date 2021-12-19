@@ -24,49 +24,54 @@ const Create = () => {
             validationSchema={FORM_VALIDATION}
             onSubmit={values => console.log(values)}
         >
-            <Form>
-                <TextFieldWrapper
-                    name="title"
-                    label="Note Title"
-                    sx={{
-                        mt: 1,
-                        mb: 2,
-                        display: 'block'
-                    }}
-                    color="secondary"
-                />
-                <TextFieldWrapper
-                    name="details"
-                    label="Details"
-                    sx={{
-                        mt: 1,
-                        mb: 2,
-                        display: 'block'
-                    }}
-                    multiline
-                    rows={5}
-                    color="secondary"
-                />
-                <RadioGroupWrapper
-                    name="category"
-                    label="Note Category"
-                    options={[
-                        {label: "Money", value: "money"},
-                        {label: "Todos", value: "todos"},
-                        {label: "Work", value: "work"},
-                        {label: "Reminders", value: "reminders"},
-                    ]}
-                />
-                <Button
-                    type="submit"
-                    variant="contained"
-                    color="secondary"
-                    endIcon={<KeyboardArrowRight/>}
-                    disabled={true}
-                >
-                    Submit
-                </Button>
-            </Form>
+            {(formProps) => {
+                return (
+                    <Form>
+                        <TextFieldWrapper
+                            name="title"
+                            label="Note Title"
+                            sx={{
+                                mt: 1,
+                                mb: 2,
+                                display: 'block'
+                            }}
+                            color="secondary"
+                        />
+                        <TextFieldWrapper
+                            name="details"
+                            label="Details"
+                            sx={{
+                                mt: 1,
+                                mb: 2,
+                                display: 'block'
+                            }}
+                            multiline
+                            rows={5}
+                            color="secondary"
+                        />
+                        <RadioGroupWrapper
+                            name="category"
+                            label="Note Category"
+                            options={[
+                                {label: "Money", value: "money"},
+                                {label: "Todos", value: "todos"},
+                                {label: "Work", value: "work"},
+                                {label: "Reminders", value: "reminders"},
+                            ]}
+                        />
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="secondary"
+                            endIcon={<KeyboardArrowRight/>}
+                            disabled={!(formProps.isValid && formProps.dirty)}
+                        >
+                            Submit
+                        </Button>
+                    </Form>
+                )
+            }
+            }
         </Formik>
     </Container>
 }
