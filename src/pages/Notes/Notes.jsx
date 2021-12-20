@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
-import axios from 'axios';
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import React, {useEffect, useState} from "react"
+import axios from "axios"
+import Typography from "@mui/material/Typography"
 import Grid from "@mui/material/Grid"
 import Note from "components/Note"
 
@@ -14,7 +13,7 @@ const Notes = () => {
     }, [])
 
 
-    return <Container>
+    return <>
         <Typography variant="h6" component="h2" gutterBottom color="textSecondary">
             Notes
         </Typography>
@@ -23,7 +22,7 @@ const Notes = () => {
                 <Note note={note}/>
             </Grid>)}
         </Grid>
-    </Container>
+    </>
 }
 
 export default Notes

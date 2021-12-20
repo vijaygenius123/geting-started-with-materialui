@@ -1,16 +1,15 @@
-import React from "react";
-import {Formik, Form} from "formik";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import {INITIAL_FORM_STATE, FORM_VALIDATION} from "./formConfig";
-import TextFieldWrapper from "../../components/TextFieldWrapper";
-import RadioGroupWrapper from "../../components/RadioGroupWrapper";
+import React from "react"
+import {Formik, Form} from "formik"
+import Typography from "@mui/material/Typography"
+import Button from "@mui/material/Button"
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight"
+import {INITIAL_FORM_STATE, FORM_VALIDATION} from "./formConfig"
+import TextFieldWrapper from "../../components/TextFieldWrapper"
+import RadioGroupWrapper from "../../components/RadioGroupWrapper"
 
 const Create = () => {
 
-    return <Container>
+    return <>
         <Typography
             variant="h6"
             component="h2"
@@ -73,7 +72,7 @@ const Create = () => {
             }
             }
         </Formik>
-    </Container>
+    </>
 }
 
 export default Create
