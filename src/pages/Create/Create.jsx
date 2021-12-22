@@ -34,7 +34,7 @@ const Create = () => {
                                 mb: 2,
                                 display: 'block'
                             }}
-                            color="secondary"
+                            color="primary"
                         />
                         <TextFieldWrapper
                             name="details"
@@ -46,7 +46,7 @@ const Create = () => {
                             }}
                             multiline
                             rows={5}
-                            color="secondary"
+                            color="primary"
                         />
                         <RadioGroupWrapper
                             name="category"
@@ -61,7 +61,7 @@ const Create = () => {
                         <Button
                             type="submit"
                             variant="contained"
-                            color="secondary"
+                            color="primary"
                             endIcon={<KeyboardArrowRight/>}
                             disabled={!(formProps.isValid && formProps.dirty)}
                         >

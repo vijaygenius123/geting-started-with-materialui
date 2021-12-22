@@ -11,8 +11,10 @@ import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 import {Menu as MenuIcon} from "@mui/icons-material";
+import { styled } from '@mui/material/styles';
 
 const drawerWidth = 240
+const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const Layout = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -86,11 +88,11 @@ const Layout = () => {
                 background: "#f7f7f7",
                 width: "100%",
                 height: "100vh",
-                paddingX: 2,
-                paddingTop: 5,
+                padding: 2,
                 flexGrow: 1
             }}>
-                <Outlet/>
+                <Offset />
+                <Outlet />
             </Box>
         </Box>
     )

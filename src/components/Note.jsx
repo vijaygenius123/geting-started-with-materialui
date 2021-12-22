@@ -28,4 +28,12 @@ const Note = ({note}) => {
     )
 }
 
+Note.defaultProps = {
+    note: {
+        category: '',
+        title: '',
+        details: ''
+    }
+}
+
 export default Note
