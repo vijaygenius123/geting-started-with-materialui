@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from "react"
-import axios from "axios"
 import Typography from "@mui/material/Typography"
 import Grid from "@mui/material/Grid"
 import Note from "components/Note"
+import {retrieveAllNotes} from "services/notesService"
 
 const Notes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_BASE_URL}/notes`)
+        retrieveAllNotes()
             .then(resp => setNotes(resp.data))
     }, [])
 

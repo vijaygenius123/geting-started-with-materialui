@@ -4,8 +4,9 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight"
 import {INITIAL_FORM_STATE, FORM_VALIDATION} from "./formConfig"
-import TextFieldWrapper from "../../components/TextFieldWrapper"
-import RadioGroupWrapper from "../../components/RadioGroupWrapper"
+import TextFieldWrapper from "components/TextFieldWrapper"
+import RadioGroupWrapper from "components/RadioGroupWrapper"
+import {createNewNote} from "services/notesService";
 
 const Create = () => {
 
@@ -21,7 +22,7 @@ const Create = () => {
         <Formik
             initialValues={INITIAL_FORM_STATE}
             validationSchema={FORM_VALIDATION}
-            onSubmit={values => console.log(values)}
+            onSubmit={values => createNewNote(values)}
         >
             {(formProps) => {
                 return (
